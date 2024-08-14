@@ -20,7 +20,7 @@ public class IOUService {
         return iouRepository.findAll();
     }
     public IOU getIOU(UUID id) throws NoSuchElementException{
-        return (IOU) iouRepository;
+        return iouRepository.findById(id).orElseThrow();
 
     }
     public IOU createIOU(IOU iou) throws IllegalArgumentException, OptimisticLockingFailureException{
