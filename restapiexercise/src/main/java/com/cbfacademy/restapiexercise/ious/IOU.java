@@ -49,12 +49,42 @@ public class IOU {
             this.amount = amount;
             this.dateTime = dateTime;
          }
+         //getters
 
-         };
+         public UUID getId(){
+            return id;
+         }
+         public String getBorrower(){
+            return borrower;
+         }
+         public String getLender(){
+            return lender;
+         }
+         public BigDecimal getAmount(){
+            return amount;
+         }
+         public Instant getDateTime(){
+            return dateTime;
+         }
+         //setters
+
+         public void setBorrower(String borrower){
+            this.borrower = borrower;
+         }
+         public void setLender(String lender){
+            this.lender = lender;
+         }
+         public void setAmount(BigDecimal amount){
+            this.amount = amount;
+         }
+         public void setDateTime(Instant dateTime){
+            this.dateTime = dateTime;
+         }
+
+
+        };
 
 
 
 
 
-
-}
