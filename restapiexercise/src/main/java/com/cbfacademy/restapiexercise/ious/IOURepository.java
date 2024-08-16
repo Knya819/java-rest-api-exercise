@@ -13,7 +13,7 @@ public interface IOURepository extends ListCrudRepository<IOU, UUID>{
     @Query(value = "SELECT * FROM ious WHERE amount > (SELECT AVG(amount) FROM ious)", nativeQuery = true)
     List<IOU> findHighValueIOUs();
 
-    // New method for low-value IOUs using JPQL
-    @Query("SELECT i FROM IOU i WHERE i.amount <= (SELECT AVG(i2.amount) FROM IOU i2)")
+    // New method for low IOUs using JPQL
+    @Query("SELECT a FROM IOU a WHERE a.amount <= (SELECT AVG(b.amount) FROM IOU b)")
     List<IOU> findLowValueIOUs();
 }
