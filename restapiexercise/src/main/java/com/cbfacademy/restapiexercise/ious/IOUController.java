@@ -70,4 +70,10 @@ public class IOUController {
         List<IOU> highValueIOUs = iouService.getHighValueIOUs();
         return ResponseEntity.ok(highValueIOUs);
     }
+
+    @GetMapping("/low")
+    public ResponseEntity<List<IOU>> getLowValueIOUs() {
+        List<IOU> lowValueIOUs = iouService.getLowValueIOUs();
+        return ResponseEntity.ok(lowValueIOUs);
+    }
 }
