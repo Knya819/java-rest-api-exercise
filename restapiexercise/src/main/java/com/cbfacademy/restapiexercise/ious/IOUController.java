@@ -30,7 +30,7 @@ public class IOUController {
             IOU iou = iouService.getIOU(id);
             return new ResponseEntity<>(iou, HttpStatus.OK);
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>( HttpStatus.NOT_FOUND);
         }
     }
 
@@ -40,7 +40,7 @@ public class IOUController {
             IOU createdIOU = iouService.createIOU(iou);
             return new ResponseEntity<>(createdIOU, HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -50,7 +50,7 @@ public class IOUController {
             IOU updatedIOU = iouService.updateIOU(id, iou);
             return new ResponseEntity<>(updatedIOU, HttpStatus.OK);
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>( HttpStatus.NOT_FOUND);
         }
     }
 
