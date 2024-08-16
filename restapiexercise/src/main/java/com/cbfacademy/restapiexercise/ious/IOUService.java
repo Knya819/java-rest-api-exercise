@@ -2,7 +2,7 @@ package com.cbfacademy.restapiexercise.ious;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
+//import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.dao.OptimisticLockingFailureException;
@@ -68,7 +68,7 @@ public class IOUService {
     public List<IOU> getHighValueIOUs() {
         return iouRepository.findHighValueIOUs();
     }
-    
+
     // Method to get IOUs with values below or equal to the average
     public List<IOU> getLowValueIOUs() {
         return iouRepository.findLowValueIOUs();
