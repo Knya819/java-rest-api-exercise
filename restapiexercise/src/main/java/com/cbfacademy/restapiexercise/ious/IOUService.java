@@ -60,7 +60,12 @@ public class IOUService {
     }
 
       // New method to get IOUs by borrower
-      public List<IOU> getIOUsByBorrower(String borrower) {
+    public List<IOU> getIOUsByBorrower(String borrower) {
         return iouRepository.findByBorrower(borrower);
+    }
+
+    // New method to get high value IOUs
+    public List<IOU> getHighValueIOUs() {
+        return iouRepository.findHighValueIOUs();
     }
 }

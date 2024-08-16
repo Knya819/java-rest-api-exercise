@@ -62,5 +62,12 @@ public class IOUController {
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    
+    }
+
+    @GetMapping("/high")
+    public ResponseEntity<List<IOU>> getHighValueIOUs() {
+        List<IOU> highValueIOUs = iouService.getHighValueIOUs();
+        return ResponseEntity.ok(highValueIOUs);
     }
 }
