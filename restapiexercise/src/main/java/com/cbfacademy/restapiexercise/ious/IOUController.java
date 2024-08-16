@@ -19,7 +19,7 @@ public class IOUController {
     }
 
     @GetMapping
-    public ResponseEntity<List<IOU>> getAllIOUs() {
+    public ResponseEntity<List<IOU>> getIOUs(@RequestParam(required = false) String borrower) {
         List<IOU> ious = iouService.getAllIOUs();
         return new ResponseEntity<>(ious, HttpStatus.OK);
     }

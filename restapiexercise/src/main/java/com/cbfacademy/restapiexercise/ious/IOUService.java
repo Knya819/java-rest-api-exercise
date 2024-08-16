@@ -58,4 +58,9 @@ public class IOUService {
         }
         iouRepository.deleteById(id);
     }
+
+      // New method to get IOUs by borrower
+      public List<IOU> getIOUsByBorrower(String borrower) {
+        return iouRepository.findByBorrower(borrower);
+    }
 }
