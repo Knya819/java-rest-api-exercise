@@ -23,23 +23,17 @@ public class IOUService {
 
     // Retrieve a specific IOU by its ID
     public IOU getIOU(UUID id) throws NoSuchElementException {
-        return iouRepository.findById(id)
-            .orElseThrow(() -> new NoSuchElementException("IOU not found with id: " + id));
+        return iouRepository.findById(id).orElseThrow();
     }
 
     // Create a new IOU
     public IOU createIOU(IOU iou) throws IllegalArgumentException, OptimisticLockingFailureException {
-        // Ensure the IOU object is valid before saving
-        if (iou.getBorrower() == null || iou.getLender() == null || iou.getAmount() == null || iou.getDateTime() == null) {
-            throw new IllegalArgumentException("Invalid IOU data provided");
-        }
         return iouRepository.save(iou);
     }
 
     // Update an existing IOU by its ID
     public IOU updateIOU(UUID id, IOU updatedIOU) throws NoSuchElementException {
-        IOU existingIOU = iouRepository.findById(id)
-            .orElseThrow(() -> new NoSuchElementException("IOU not found with id: " + id));
+        IOU existingIOU = iouRepository.findById(id).orElseThrow();
             
         // Save the updated IOU
         return iouRepository.save(existingIOU);
