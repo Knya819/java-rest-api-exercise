@@ -27,7 +27,10 @@ public class IOU {
     }
 
     // Parameterized constructor
-    public IOU(String borrower, String lender, BigDecimal amount, Instant dateTime) {
+    public IOU(String borrower,
+              String lender,
+              BigDecimal amount, 
+              Instant dateTime) {
         this.borrower = borrower;
         this.lender = lender;
         this.amount = amount;
