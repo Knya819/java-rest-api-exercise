@@ -32,6 +32,14 @@ public class IOU {
     private BigDecimal amount;
     private Instant dateTime;
 
+    
+    public IOU(String borrower, String lender, BigDecimal amount, Instant dateTime) {
+      this.borrower = borrower;
+      this.lender = lender;
+      this.amount = amount;
+      this.dateTime = dateTime;
+  }
+  
     // Define a default UUID
     private static final UUID DEFAULT_UUID = UUID.fromString("00000000-0000-0000-0000-000000000000");
 
