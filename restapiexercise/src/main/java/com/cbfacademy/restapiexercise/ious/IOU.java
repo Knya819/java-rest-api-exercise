@@ -24,7 +24,7 @@ import jakarta.persistence.Table;
 public class IOU {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id; 
 
     private String borrower;
