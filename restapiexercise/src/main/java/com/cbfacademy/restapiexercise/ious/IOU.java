@@ -25,26 +25,22 @@ public class IOU {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id; // Use AUTO strategy to let the database handle UUID generation
-
+    private UUID id; 
+    
     private String borrower;
     private String lender;
     private BigDecimal amount;
     private Instant dateTime;
 
-    
-    public IOU(String borrower, String lender, BigDecimal amount, Instant dateTime) {
+
+    public IOU(String borrower, 
+              String lender,
+              BigDecimal amount, 
+              Instant dateTime) {
+      this.id =UUID.fromString("00000000-0000-0000-0000-000000000000");
       this.borrower = borrower;
       this.lender = lender;
       this.amount = amount;
       this.dateTime = dateTime;
   }
-  
-    // Define a default UUID
-    private static final UUID DEFAULT_UUID = UUID.fromString("00000000-0000-0000-0000-000000000000");
-
-    // Custom getter for id with default UUID logic
-    public UUID getId() {
-        return id != null ? id : DEFAULT_UUID;
-    }
 }
