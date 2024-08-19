@@ -26,7 +26,7 @@ public class IOU {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id; 
-    
+
     private String borrower;
     private String lender;
     private BigDecimal amount;
