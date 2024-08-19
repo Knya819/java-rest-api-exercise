@@ -37,7 +37,7 @@ public class IOU {
               String lender,
               BigDecimal amount, 
               Instant dateTime) {
-      this.id =UUID.fromString("00000000-0000-0000-0000-000000000000");
+      this.id =UUID.randomUUID();
       this.borrower = borrower;
       this.lender = lender;
       this.amount = amount;
